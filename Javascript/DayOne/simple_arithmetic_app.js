@@ -4,13 +4,16 @@ let count_correct = 0;
 for(let count = 0; count < 10; count++) {
 	let first_number = Math.floor(Math.random() * 100);
 	let second_number = Math.floor(Math.random() * 100);
-	let answer = first_number - second_number;
+
+	let minimum = Math.min(first_number,second_number);
+	let maximum = Math.max(first_number,second_number);
+	let answer = maximum - minimum;
 	
 
-	let user_input = prompt("What is " + first_number + " minus " + second_number + " : ");
+	let user_input = prompt("What is " + maximum + " minus " + minimum + " : ");
 
 	if(user_input == answer) {
-		countCorrect += 1;
+		count_correct += 1;
 	}
 	
 	if(user_input != answer) {
