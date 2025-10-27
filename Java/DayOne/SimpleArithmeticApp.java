@@ -23,7 +23,7 @@ for(int count = 0; count < 10; count++) {
 	if(userInput * 1.0 != answer) {
 		System.out.print("Try again: ");
 		Double userInputTwo = input.nextDouble();
-		if(userInputTwo != answer) {
+		if(userInputTwo * 1.0 != answer) {
 			System.out.println("The correct answer is : " + answer);
 		}
 	}

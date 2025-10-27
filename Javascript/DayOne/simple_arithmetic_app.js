@@ -1,6 +1,7 @@
 let prompt = require('prompt-sync')();
 
 let count_correct = 0;
+
 for(let count = 0; count < 10; count++) {
 	let first_number = Math.floor(Math.random() * 100);
 	let second_number = Math.floor(Math.random() * 100);

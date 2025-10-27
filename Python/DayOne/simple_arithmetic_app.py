@@ -3,7 +3,9 @@ import datetime
  
 start = datetime.datetime.now()
 count_correct = 0
-for _ in range(10):
+count = 0
+choice = "yes"
+while choice != "no" and count < 10:
 	first_number = random.randint(0,100)
 	second_number = random.randint(0,100)
 
@@ -22,9 +24,12 @@ for _ in range(10):
 
 		if user_input_2 != answer:
 			print("The correct answer is: " + str(answer))
+	count += 1
+	if count < 10:
+		choice = input("Would you like another question?: ").lower()
 
 
-print("You answered " + str(count_correct) + " questions correctly out of 10 questions!")
+print("You answered " + str(count_correct) + " questions correctly out of " + str(count) + " questions!")
 end = datetime.datetime.now()
 print("Time taken: " + str(end - start))
 
