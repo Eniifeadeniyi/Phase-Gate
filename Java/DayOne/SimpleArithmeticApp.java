@@ -14,15 +14,15 @@ for(int count = 0; count < 10; count++) {
 	Double answer = maximum - minimum;
 	
 	System.out.print("What is " + maximum + " minus " + minimum + ": ");
-	int userInput = input.nextInt();
+	Double userInput = input.nextDouble();
 	
-	if(userInput == answer) {
+	if(userInput * 1.0 == answer) {
 		countCorrect += 1;
 	}
 	
-	if(userInput != answer) {
+	if(userInput * 1.0 != answer) {
 		System.out.print("Try again: ");
-		int userInputTwo = input.nextInt();
+		Double userInputTwo = input.nextDouble();
 		if(userInputTwo != answer) {
 			System.out.println("The correct answer is : " + answer);
 		}

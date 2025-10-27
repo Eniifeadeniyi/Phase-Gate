@@ -12,12 +12,13 @@ for _ in range(10):
 	answer = maximum - minimum
 
 	
-	user_input = int(input("What is " + str(maximum) + " - " + str(minimum) + "?: "))
+	user_input = float(input("What is " + str(maximum) + " - " + str(minimum) + "?: "))
+
 	if user_input == answer:
 		count_correct += 1
 
 	if user_input != answer:
-		user_input_2 = int(input("Try again: "))
+		user_input_2 = float(input("Try again: "))
 
 		if user_input_2 != answer:
 			print("The correct answer is: " + str(answer))
@@ -26,3 +27,6 @@ for _ in range(10):
 print("You answered " + str(count_correct) + " questions correctly out of 10 questions!")
 end = datetime.datetime.now()
 print("Time taken: " + str(end - start))
+
+
+
