@@ -73,12 +73,18 @@ console.log("You scored " + final_score(score) + " over 10")
 //trying out another method(the way i did python)
 /*
 let numbers = [0,1,2,3,4,5,6,7,8,9];
+while(numbers.length() != 0) {
 console.log(numbers);
 let choice = prompt("Enter a number from numbers above: ");
+if(numbers.contains(choice)) {
 let temp = numbers.at(-1);
 numbers[numbers.length-1] = numbers[choice]
 numbers[choice] = temp
 numbers.pop()
-console.log(numbers)
+}
+else {
+	console.log("Please, enter an available number!")
+
+}
 */
 
