@@ -17,40 +17,22 @@ for(int index = 0; index < result.length; index++) {
 
 String[] words = {"madam", "racecar", "length"};
 boolean[] output = new boolean[words.length];
-	String reverse = "";
 	for(int point = 0; point < words.length; point++) {
 		String word = words[point];
-		//System.out.println(word);
-		reverse = "";
-		System.out.print(reverse);
+		String reverse = "";
 		for(int count = 0; count < word.length(); count++) {
-			System.out.printf("%d %d", word.length(), count);
-			reverse = word.charAt(count) + reverse;		
-			int counter = 0;
-
-			while(counter < output.length) {
-	
-				if(reverse.equalsIgnoreCase(word)) {
-					output[counter] = true;}
-				else if(!reverse.equalsIgnoreCase(word)) {
-					output[counter] = false;}
-			counter++;	
-			}
+			reverse = word.charAt(count) + reverse;	
 			
-			
-	}	
-
-
-	
-	
+		}
+		if(reverse.equalsIgnoreCase(word)) {
+			output[point] = true;}
+		
 	}
-
-	System.out.print(output[0]);
-	/*
 	for(int index = 0; index < output.length; index++) {
-		System.out.print(output[index]);
-	}
-	*/	
+		System.out.println(output[index]);}
+
+
+		
 }
 
 }
