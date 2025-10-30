@@ -1,11 +1,10 @@
+import java.util.Arrays;
 public class Functions {
 
 public static void main(String[] args) {
 
 boolean[] answer = Palindrome(new String[] {"madam", "racecar", "length"});
-for(int index = 0; index < answer.length; index++) {
-		System.out.println(answer[index]);}
-
+System.out.print(Arrays.toString(answer));
 }
 
 public static boolean[] Palindrome(String[] words) {
