@@ -16,6 +16,7 @@ System.out.print("Enter price for " + choice + " : ");
 double price = input.nextDouble();
 
 CheckoutSystemFunctions.makeInvoice(choice,price,invoice);
+CheckoutSystemFunctions.makeReceipt(choice,price,invoice);
 
 input.nextLine();
 System.out.print("Enter product name or type 'done' to finish: ");
