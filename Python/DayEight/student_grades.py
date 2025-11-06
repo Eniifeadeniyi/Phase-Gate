@@ -3,6 +3,7 @@ student = {}
 totals = []
 totals1 = []
 positions = []
+tot = []
 maxes = []
 passes = 0
 fails = 0
@@ -14,6 +15,7 @@ rating = []
 scores = []
 portion = []
 portion1 = []
+
 
 students = input("Enter number of students: ")
 while not students.strip().isdigit():
@@ -43,7 +45,11 @@ if int(students) > 0 and int(subjects) > 0:
 	print("AVE", end = "   ")
 	print("POS")
 
-
+	for key,value in student.items():
+		summation = sum(value.values())
+		tot.append(summation)
+		new = sorted(tot, reverse = True)
+	positions = edit_numbers(tot,new)
 
 	for key,value in student.items():
 		print(f"Student {key}", end = " ")
@@ -55,10 +61,10 @@ if int(students) > 0 and int(subjects) > 0:
 		for grade in value.values():
 			print(f"{grade:>7}", end = " ")
 		print(f"{total:>6}", end = " ")
-		print(f"{mean:>6}", end = " ")		
+		print(f"{mean:>6}", end = " ")	
+		print(f"{positions[key-1]:>5}")	
 		print()
-	print(edit_numbers(totals,new))
-	
+
 	print()
 
 	print("SUBJECT SUMMARY")
