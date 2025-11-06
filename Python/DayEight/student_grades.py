@@ -1,9 +1,9 @@
 from functions import *
 student = {}
 totals = []
-totals1 = []
 positions = []
 tot = []
+tot1 = []
 maxes = []
 passes = 0
 fails = 0
@@ -48,15 +48,14 @@ if int(students) > 0 and int(subjects) > 0:
 	for key,value in student.items():
 		summation = sum(value.values())
 		tot.append(summation)
-		new = sorted(tot, reverse = True)
-	positions = edit_numbers(tot,new)
+		tot1.append(summation)
+	new = descending(tot)
+	positions = edit_numbers(tot1,new)
 
 	for key,value in student.items():
 		print(f"Student {key}", end = " ")
 		total = sum(value.values())
 		totals.append(total)
-		totals1.append(total)
-		new = sorted(totals, reverse = True)
 		mean = average(total,int(subjects))
 		for grade in value.values():
 			print(f"{grade:>7}", end = " ")
@@ -154,12 +153,12 @@ if int(students) > 0 and int(subjects) > 0:
 	print()	
 
 	print("CLASS SUMMARY")
-	winner = maximum(totals1)
-	loser = minimum(totals1)
-	print(f"Best Graduating Student is: Student {totals1.index(winner)+1} scoring {winner}")
-	print(f"Worst Graduating Student is: Student {totals1.index(loser)+1} scoring {loser}")
-	print(f"Class total score is: {sum(totals1)}")
-	print(f"Class Average score is: {average(sum(totals1),len(totals1))}")
+	winner = maximum(totals)
+	loser = minimum(totals)
+	print(f"Best Graduating Student is: Student {totals.index(winner)+1} scoring {winner}")
+	print(f"Worst Graduating Student is: Student {totals.index(loser)+1} scoring {loser}")
+	print(f"Class total score is: {sum(totals)}")
+	print(f"Class Average score is: {average(sum(totals),len(totals))}")
 	
 
 else:
