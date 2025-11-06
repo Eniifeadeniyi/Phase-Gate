@@ -1,6 +1,7 @@
 from functions import *
 student = {}
 totals = []
+totals1 = []
 positions = []
 maxes = []
 passes = 0
@@ -9,7 +10,6 @@ tots = []
 tots1 = []
 maxbiggest = []
 minleast = []
-totals1 = []
 rating = []
 scores = []
 portion = []
@@ -110,18 +110,17 @@ if int(students) > 0 and int(subjects) > 0:
 				rating.append("fail")
 			else:
 				rating.append("pass")
-	#print(failures)
 	
+	cout = 0
 	for element in rating:
-		count += 1
-		if count == int(students):
-			portion.append(rating[:count])
-			portion1.append(rating[:count])
-			del rating[:count]
-			count = 0
+		cout += 1
+		if cout == int(students):
+			portion.append(rating[:cout])
+			portion1.append(rating[:cout])
+			del rating[:cout]
+			cout = 0
 	portion.append(rating)
-	portion1.append(rating)
-
+	portion1.append(rating)	
 
 	for counter in range(len(portion)):
 		element = portion[counter]
@@ -130,6 +129,7 @@ if int(students) > 0 and int(subjects) > 0:
 			if ele == "fail":
 				count += 1
 			portion[counter] = count
+	
 
 	for counter in range(len(portion1)):
 		element = portion1[counter]
