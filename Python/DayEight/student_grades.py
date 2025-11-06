@@ -6,9 +6,14 @@ maxes = []
 passes = 0
 fails = 0
 tots = []
+tots1 = []
 maxbiggest = []
-leastsmallest = []
+minleast = []
 totals1 = []
+rating = []
+scores = []
+portion = []
+portion1 = []
 
 students = input("Enter number of students: ")
 while not students.strip().isdigit():
@@ -57,8 +62,12 @@ if int(students) > 0 and int(subjects) > 0:
 	print()
 
 	print("SUBJECT SUMMARY")
+	
+		
 	for count in range(1,int(subjects) + 1):
 		maxes.clear()
+		fails = 0
+		passes = 0
 		for key,value in student.items():
 			score = value[count]
 			maxes.append(score)
@@ -68,10 +77,11 @@ if int(students) > 0 and int(subjects) > 0:
 		total = sum(maxes)
 		ave = average(total,key)
 		least = minimum(maxes)
-		leastsmallest.append(least)
+		minleast.append(least)
 		person = maxes.index(biggest) + 1
 		person1 = maxes.index(least) + 1
-		tots.append(ave)
+		tots.append(biggest)
+		tots1.append(least)
 		for element in maxes:
 			if element >= 50:
 				passes += 1
@@ -88,12 +98,52 @@ if int(students) > 0 and int(subjects) > 0:
 		print(f"Number of Fails: {fails}")
 		print()
 
-	hardsub = tots.index(minimum(tots)) + 1
+	hardsub = tots1.index(minimum(tots1)) + 1
 	easysub = tots.index(maximum(tots)) + 1
-	print(f"The hardest subject is Subject {hardsub} with failures ")
-	print(f"The easiest subject is Subject {easysub} with failures ")
+	for count in range(1,int(subjects) + 1):
+		scores.clear()
+		for key,value in student.items():
+			score = value[count]
+			scores.append(score)
+		for element in scores:
+			if element < 50:
+				rating.append("fail")
+			else:
+				rating.append("pass")
+	#print(failures)
+	
+	for element in rating:
+		count += 1
+		if count == int(students):
+			portion.append(rating[:count])
+			portion1.append(rating[:count])
+			del rating[:count]
+			count = 0
+	portion.append(rating)
+	portion1.append(rating)
+
+
+	for counter in range(len(portion)):
+		element = portion[counter]
+		count = 0
+		for ele in element:
+			if ele == "fail":
+				count += 1
+			portion[counter] = count
+
+	for counter in range(len(portion1)):
+		element = portion1[counter]
+		count = 0
+		for ele in element:
+			if ele == "pass":
+				count += 1
+			portion1[counter] = count			
+	
+	
+	print(f"The hardest subject is Subject {hardsub} with {portion[hardsub-1]} failures")
+	print(f"The easiest subject is Subject {easysub} with {portion1[easysub-1]} passes ")
 	print(f"The overall Highest score is scored by Student {person} in Subject {maxbiggest.index(maximum(maxbiggest))+1} scoring {maximum(maxbiggest)}")
-	print(f"The overall Lowest score is scored by Student {person1} in Subject {leastsmallest.index(minimum(leastsmallest))+1} scoring {minimum(leastsmallest)}")
+	print(f"The overall Lowest score is scored by Student {person1} in Subject {minleast.index(minimum(minleast))+1} scoring {minimum(minleast)}")
 	
 	print()	
 
@@ -104,9 +154,6 @@ if int(students) > 0 and int(subjects) > 0:
 	print(f"Worst Graduating Student is: Student {totals1.index(loser)+1} scoring {loser}")
 	print(f"Class total score is: {sum(totals1)}")
 	print(f"Class Average score is: {average(sum(totals1),len(totals1))}")
-			
-	
-	
 	
 
 else:
