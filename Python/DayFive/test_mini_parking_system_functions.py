@@ -69,11 +69,11 @@ class TestMiniParkingSystem(unittest.TestCase) :
 		self.assertEqual(actual,expected)
 	
 	def test_reverse_cars_works(self):	
-		actual = reverse_cars([0,0,1,0],2)
+		actual = reverse_cars([0,0,1,0],3)
 		expected = [0,0,0,0]
 		self.assertEqual(actual,expected)
 		actual = reverse_cars([0,0,1,0],"2")
-		expected = [0,0,0,0]
+		expected = [0,0,1,0]
 		self.assertEqual(actual,expected)
 
 

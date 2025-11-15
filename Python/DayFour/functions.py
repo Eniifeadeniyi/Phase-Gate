@@ -18,7 +18,7 @@ def get_perfect_square(numbers):
 			numbers[count] = "Invalid!"
 			
 	return numbers
-print(get_perfect_square([2,4,7,-10]))
+print(get_perfect_square([2,4,7,-10,626,126]))
 
 #2
 def get_palindrome_flags(words):
