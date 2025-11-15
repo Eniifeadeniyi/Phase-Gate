@@ -1,14 +1,26 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCheckoutSystemFunctions {
 	
-	ArrayList<ArrayList> invoice = new ArrayList<ArrayList>();
+
 	@Test
 	public void testThatMakeInvoiceWorks(){
-		ArrayList actual =  CheckoutSystemFunctions.makeInvoice("Water", 500.50,invoice);
-		ArrayList expected = [[Water],[500.50]]
-		assertEquals(actual, expected);
+		String[] actual =  CheckoutSystemFunctions.makeInvoice("Water", "500.50");
+		String outcome = actual[0];
+		String outcome1 = actual[1];
+		assertEquals(outcome,"Water");
+		assertEquals(outcome1,"500.50");
 	}
+
+	@Test
+	public void testThatMakeReceiptWorks(){
+		String[] actual =  CheckoutSystemFunctions.makeReceipt("Water", "500.50");
+		String outcome = actual[0];
+		String outcome1 = actual[1];
+		assertEquals(outcome,"Water");
+		assertEquals(outcome1,"500.50");
+	}
+
 }

@@ -12,9 +12,9 @@ public class FunctionsTest {
 
 	@Test
 	public void PalindromeWorks() {
-		boolean[] actual = function.palindrome(new String[] {"madam"});
-		boolean[] expected = {false};
-		assertEquals(actual,expected);
+		boolean[] answer = functions.Palindrome(new String[] {"madam", "racecar", "length"});
+		boolean[] actual = System.out.print(Arrays.toString(answer));
+		assertEquals(actual, [true, true, false]);
 	}
 
 
